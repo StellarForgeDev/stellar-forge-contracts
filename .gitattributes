@@ -1,0 +1,6 @@
+# Normalize line endings so shell scripts, WASM checksums, and Rust sources are LF
+* text=auto eol=lf
+
+# Binary artifacts that must not be line-ending normalized.
+*.wasm binary
+*.exe binary

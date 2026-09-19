@@ -1421,7 +1421,6 @@ name = "sandbox-runner"
 version = "0.0.0"
 dependencies = [
  "ed25519-dalek",
- "merkle-airdrop",
  "serde_json",
  "soroban-sdk",
 ]

@@ -1,0 +1,3 @@
+[submodule "contracts/sandbox-runner"]
+	path = contracts/sandbox-runner
+	url = https://github.com/StellarForgeDev/stellar-forge-sandbox.git
