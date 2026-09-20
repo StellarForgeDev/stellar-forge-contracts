@@ -31,6 +31,8 @@ jobs:
             crate="${package//-/_}"
             fresh="target/wasm32v1-none/release/${crate}.wasm"
             test -f "$fresh"
+            echo "FRESH $package $(stat -c '%s' "$fresh") bytes $(sha256sum "$fresh" | cut -d' ' -f1)"
+            echo "PREBUILT $package $(stat -c '%s' "$prebuilt") bytes $(sha256sum "$prebuilt" | cut -d' ' -f1)"
             cmp -- "$fresh" "$prebuilt"
             echo "MATCH $package"
           done
