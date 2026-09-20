@@ -23,6 +23,12 @@ jobs:
       - run: cargo clippy --workspace -- -D warnings
       - run: cargo clean
       - run: cargo build --target wasm32v1-none --release --workspace --exclude sandbox-runner --exclude greeter --exclude test-asset
+      - name: Capture Linux source-built WASM for parity diagnosis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-source-built-wasm
+          path: target/wasm32v1-none/release/*.wasm
       - name: Compare source-built WASM with committed prebuilt artifacts
         run: node scripts/verify-prebuilt.mjs
       - run: sha256sum -c checksums.txt
