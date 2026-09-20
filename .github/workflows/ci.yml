@@ -38,6 +38,33 @@ jobs:
             cmp -- "$fresh" "$prebuilt"
             echo "MATCH $package"
           done
+      - name: Capture WASM parity diagnostics
+        if: always()
+        shell: bash
+        run: |
+          {
+            rustc --version
+            cargo --version
+            for prebuilt in prebuilt/*.wasm; do
+              filename="${prebuilt##*/}"
+              package="${filename%.wasm}"
+              crate="${package//-/_}"
+              fresh="target/wasm32v1-none/release/${crate}.wasm"
+              if test -f "$fresh"; then
+                printf '%s fresh ' "$package"
+                sha256sum "$fresh"
+                printf '%s prebuilt ' "$package"
+                sha256sum "$prebuilt"
+              else
+                echo "$package missing-fresh"
+              fi
+            done
+          } > parity-diagnostics.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wasm-parity-diagnostics
+          path: parity-diagnostics.txt
       - run: sha256sum -c checksums.txt
         working-directory: prebuilt
       - run: cargo test --workspace
