@@ -51,10 +51,13 @@ jobs:
               crate="${package//-/_}"
               fresh="target/wasm32v1-none/release/${crate}.wasm"
               if test -f "$fresh"; then
+                fresh_hash="$(sha256sum "$fresh" | cut -d' ' -f1)"
+                prebuilt_hash="$(sha256sum "$prebuilt" | cut -d' ' -f1)"
                 printf '%s fresh ' "$package"
-                sha256sum "$fresh"
+                echo "$fresh_hash  $fresh"
                 printf '%s prebuilt ' "$package"
-                sha256sum "$prebuilt"
+                echo "$prebuilt_hash  $prebuilt"
+                echo "::error title=Parity $package::fresh=$fresh_hash prebuilt=$prebuilt_hash"
               else
                 echo "$package missing-fresh"
               fi
