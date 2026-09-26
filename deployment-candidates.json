@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidates": [
+    {
+      "component": "access-control",
+      "artifactPath": "prebuilt/access-control.wasm",
+      "artifactHash": "39b4c6d022146e4316642cf94bfc759fa85ae7399539798021e0136c768dfc3e",
+      "contractsCommit": "0aac7802ec43dd296211763936863d5e929c6118",
+      "buildMetadataCommit": "349380efc6d237dcda2c328c64ddb00471004d06",
+      "sdkVersion": "27",
+      "target": "wasm32v1-none",
+      "toolchain": "1.97.1",
+      "candidateStatus": "CANDIDATE"
+    }
+  ]
+}
