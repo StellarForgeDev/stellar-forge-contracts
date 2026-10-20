@@ -17,5 +17,24 @@
     "constructorVerification": "NOT_QUERYABLE",
     "status": "RECORDED",
     "verificationPurpose": "controlled-testnet-workflow"
+  },
+  {
+    "componentId": "access-control",
+    "network": "testnet",
+    "contractId": "CBLZAQLC4ZJRVPNV37Z34QYHPHRP5QGH4IV7VKB5ON32HU4A77YFFWE7",
+    "localArtifactHash": "39b4c6d022146e4316642cf94bfc759fa85ae7399539798021e0136c768dfc3e",
+    "deployedArtifactHash": "39b4c6d022146e4316642cf94bfc759fa85ae7399539798021e0136c768dfc3e",
+    "artifactVerified": true,
+    "uploadTransactionHash": "03bdc2f35821c1e07a1615539f8c49345819482d829ce4fb0939831d05cd9227",
+    "deploymentTransactionHash": "751459c5945fb6cf61b0d74700470df6eee83b9b1ef01794bb4ddcab01464ca0",
+    "deployer": "GBQGCPTQVAB3DDO32QEQDEN6X6EENPMLOMMTA2KE4ZNPHFCYJU7PGWKW",
+    "constructorArguments": {
+      "admin": "GBQGCPTQVAB3DDO32QEQDEN6X6EENPMLOMMTA2KE4ZNPHFCYJU7PGWKW"
+    },
+    "confirmationTimestamp": "2026-10-20T18:40:14.101Z",
+    "verificationTimestamp": "2026-10-20T18:40:14.101Z",
+    "constructorVerification": "NOT_QUERYABLE",
+    "status": "RECORDED",
+    "verificationPurpose": "controlled-testnet-workflow"
   }
 ]
