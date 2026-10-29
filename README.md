@@ -1,8 +1,34 @@
 # Stellar-Forge Contracts
 
-Soroban contract workspace for the Stellar-Forge reusable component
-catalog. Each component in the catalog maps to a real, tested Soroban
-contract in this workspace.
+![Stellar-Forge Contracts](./assets/stellar-forge-contracts-banner.svg)
+
+[![CI](https://github.com/StellarForgeDev/stellar-forge-contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/StellarForgeDev/stellar-forge-contracts/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/StellarForgeDev/stellar-forge/blob/main/LICENSE)
+[![Rust](https://img.shields.io/badge/Rust-Soroban-orange.svg)](https://developers.stellar.org/docs/build/smart-contracts)
+[![Status: Testnet-focused](https://img.shields.io/badge/status-Testnet--focused-6ea8ff.svg)](https://github.com/StellarForgeDev/stellar-forge/blob/main/ROADMAP.md)
+
+Soroban contract workspace for Stellar-Forge’s reusable component catalog. Each component maps to real contract source and Rust tests; artifact integrity, provenance, and deployment evidence remain separate claims.
+
+## Repository role
+
+This repository owns Soroban contract source, tests, prebuilt WASM, candidate authorization metadata, and deployment evidence. The web application consumes it as a submodule; the sandbox runner executes selected WASM in isolation.
+
+```text
+contract source + Rust tests
+          │
+          ▼
+  deterministic WASM build ──► checksums / candidate manifest
+          │                                  │
+          └──────────────► Testnet evidence ─┘
+```
+
+## Start here
+
+- [Build and test commands](#commands)
+- [Artifact and evidence boundaries](./testnet-evidence.md)
+- [Candidate authorization manifest](./deployment-candidates.json)
+- [Core application and roadmap](https://github.com/StellarForgeDev/stellar-forge)
+- [Sandbox runner](https://github.com/StellarForgeDev/stellar-forge-sandbox)
 
 ## Project Structure
 
@@ -169,3 +195,11 @@ deployed `token` contract (the address already registered under `testnet` /
 contract. Any other SEP-41-compatible contract address works equally well.
 
 Re-running the target deploys a fresh instance with a new id.
+
+## Status and boundaries
+
+The workspace contains fifteen production catalog packages plus test fixtures and the sandbox runner. A registry entry is configuration evidence only. Token and Payment historical on-chain hashes differ from current prebuilt artifacts; do not infer parity without fresh verification. This repository does not authorize Mainnet activity.
+
+## Project policies and history
+
+Shared [contributing](https://github.com/StellarForgeDev/stellar-forge/blob/main/CONTRIBUTING.md), [security](https://github.com/StellarForgeDev/stellar-forge/blob/main/SECURITY.md), [code of conduct](https://github.com/StellarForgeDev/stellar-forge/blob/main/CODE_OF_CONDUCT.md), and [MIT license](https://github.com/StellarForgeDev/stellar-forge/blob/main/LICENSE) policies are maintained in the core repository. See the [contracts commit history](https://github.com/StellarForgeDev/stellar-forge-contracts/commits/main/) as the changelog.
