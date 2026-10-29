@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Stellar-Forge contracts</title><desc id="desc">A dark technical banner showing deterministic contract artifacts and evidence.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#282044"/></linearGradient><linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c59cff"/><stop offset="1" stop-color="#62e6d5"/></linearGradient></defs>
+  <rect width="1200" height="300" rx="24" fill="url(#bg)"/><path d="M740 58h350M740 92h280M740 126h320" stroke="#c59cff" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+  <g fill="none" stroke="url(#accent)" stroke-width="4"><path d="M770 180l54-31 54 31-54 31zM878 180l54-31 54 31-54 31zM986 180l54-31 54 31-54 31zM824 149v62M932 149v62M1040 149v62"/></g>
+  <text x="72" y="112" fill="#c59cff" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">STELLAR-FORGE CONTRACTS</text><text x="72" y="162" fill="#f7f3ff" font-family="Arial,sans-serif" font-size="42" font-weight="700">Deterministic Soroban artifacts</text><text x="72" y="204" fill="#d3c9e8" font-family="Arial,sans-serif" font-size="21">Contracts · WASM · provenance evidence</text><text x="72" y="252" fill="#a998c5" font-family="Arial,sans-serif" font-size="15">SOURCE / BUILD / INTEGRITY / TESTNET EVIDENCE</text>
+</svg>
